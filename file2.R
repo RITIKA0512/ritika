@@ -1,187 +1,218 @@
-my first file
-#comment using hash
+#my first r File
+#comment by starting #
 women
-#control+enter for executing a command
+#control + enter to execute command
 ?women
-#for help-type ? followed by command
 ?mean
-#example
+#? before function to seek help
 mtcars
-?mtcars
+#? before function to seek help
+mtcars
 mean(mtcars$mpg)
-#calculating mean of mpg in mtcars data.write mean() followed bydollar sign.
-mean(mtcars$hp)
-#mean of horse power
 names(mtcars)
-#gives names of the variables in data set
+names(mtcars)
+mean(mtcars$hp)
 colMeans(mtcars)
-#gives average of all columns,you could have sum,diff,etc
 rowMeans(mtcars)
-#cars wise avg row wise
+head(mtcars)
 head(mtcars,1)
-#head by default returns first six rows but if put 1 gives only one row
+head(mtcars,-1)
+head(mtcars)
 tail(mtcars)
-#last six rows
-tail(mtcars,1) #last row
+tail(mtcars,1)  # last row
+mean(mtcars$mpg)
+names(mtcars)
+mean(mtcars$hp)
+colMeans(mtcars)
+rowMeans(mtcars)
+head(mtcars)
 hist(mtcars$mpg)
-#draw a histogram
-hist(mtcars$mpg,breaks = 3)
-#3 class intervals in histogram
-
-
-#vector
-x=c(1,2,5,7) #c is variable to join x and data
+hist(mtcars$mpg, breaks=8)
+hist(mtcars$mpg, breaks=3)
+x = c(1,2,5,7)
 x
-class(x) #created data set,class telling type of subject i.e numeric type vector
-
-x1=c(2L,8L)
+class(x)
+x1 =c(2L, 8L)
 class(x1)
 class(mtcars)
-x3=c("a",'b',"dhiraj") #x3 name,c combines them,x3 is character
+x3 = c('a','B','dhiraj')
+x3
+x3 = c("a",'B','dhiraj')
 x3
 class(x3)
-x4=c(TRUE,FALSE,T,F) #LOGICAL
+x4 = c(TRUE, FALSE, T, F)
 x4
-x5=1:100000  #CREATED SEQUENCE OF DATA.= SYMBOL FOR ASSIGNMENT
+x5 = 1:100000
 x5
-x6<-2 # <- ANOTHER WAY OF ASSIGNMENT BY DEFAULT
-(x5=1:100000)
-(x7 =rnorm(1000)) #rnorm for normal distribution
-sd(x7) #standard deviation
+(x5 = 1:100000)
+x6 <- 2
+x7 = rnorm(100)
+(x7 = rnorm(100))
+mean(x7)
+sd(x7)
+length(x7)
 plot(density(x7))
-hist(x7) #only histogram
-hist(x7,freq=F) #write freq imp. line 53 and 54 together execute one after another.
-points(density(x7)) #to overlay the two graphs first execute 53
+hist(x7)
+plot(density(x7))
+hist(x7, freq=F)
+points(density(x7))
+hist(x7, freq=F)
+points(density(x7))
+(x8 = rnorm(100, mean = 60, sd=10))
 
-
-(x8=rnorm(100, mean=60, sd=10)) #draw histogram and overlay the graphs
-hist(x8)
-hist(x8,freq=F)
-points(density(x8))
-mean(x8)
-sd(x8)
-
-library(e1071) #for kurtosis you need package
+library(e1071)
+?kurtosis
 kurtosis(x8)
-skewness(x8) #left skewness
-
-
-x9=runif(100, 30, 90) #uniform distribution vector data set
+skewness(x8)
+hist(x8)
+points(density(x8))
+hist(x8, freq=F)
+points(density(x8))
+x9 = runif(100, 30, 90)
+?runif
 x9
-trunc(x9) #remove decimal
-round(x9,1) #round off to one decimal point
+trunc(x9)
+round(x9,1)
 floor(x9)
 ceiling(x9)
-x10= ceiling(x9) #storing the ceiling values of x9
+x10 = ceiling(x9)
 x10
+x9
+mean(x10)
 median(x10)
-sort(x10) #sorting x10 in ascending by default
-sort(x10, decreasing = T)
-
-x10[1:10] #first ten student marks
-x10[x10 > 60] #values greater than 60
+sort(x10)
+sort(x10, decreasing=T)
+x10[x10 > 60]
+x10
+x10[1:10]
 x10[20:30]
-x10[-c(1:20)] #dont give the first 20 numbers so -
-x10[c(1,5,7)] #give first,third and fifth no.
-
-
+x10[ -1:20]
+x10[ -c(1:20)]
+x10[c(1,5,7)]
+x10
+x10
+x10
 #matrices
-
-m1=matrix(1:24 ,nrow=6) #create matrix
+m1 = matrix(1:24 , nrow=6)
 m1
 dim(m1)
-m2= matrix(1:56, ncol=8)
+m2 = matrix(1:100, ncol=8) #error due non divisibility
+m2 = matrix(1:56, ncol=8)
 m2
-m3=matrix(1:24,ncol=6 ,byrow=T) #change the way data is filled up by default data gets stored columnwise
+m3 = matrix(1:24, ncol=6, byrow = T)
 m3
-colnames(m3)=month.abb[1:6] #naming the first six months so month.abbreviation
+colnames(m3)=month.abb[1:6]
 m3
-rownames(m3)=paste('product',1:4,sep='_') #"product" sep=does concatinate func. and then use no.1 to 4 
+rownames(m3)= paste('Product',1:4, sep='_')
 m3
-rowMeans(m3) #calculate row mean
-colMeans(m3)
-rowSums(m3) #sum of rows
-m1[ ,1:2]
-m2[ ,1:2]
-m3[c(1,3), ] #specific rows
+rowMeans(m3)
+m1
+m1[ , 1:2]
+m3
+m3[ , 1:2]
+m3[c(1,3), ]
 colMeans(m3[c(1,3), ])
-m3[ ,c('Apr','Jun')]
+m3[ , 1:3]
+m3[ , c('Apr',' Jun')]
+m3[ , c('Apr','Jun')]
+colMeans(m3[c(1,3), ])
+m3[ , c('Apr','Jun')]
 max(m3)
 min(m3)
 range(m3)
 
-#question
-
-#date.frame
-#combination of vectors with same length
+#data.frame
 n=30
-(rollno= paste('S',1:30,sep = '-')) #alphanumeric roll no
-(sname=paste('student' ,1:30, sep='&')) #student name
+rollno = 1:30
+(rollno = paste('F',1:30,sep='-'))
+(sname = paste('Student',1:30, sep='&'))
 
-set.seed(1234) #generate same pattern of data
-(gender= sample(c('M','F'),size=n,replace=T,prob=c(.7,.3)))
-#pick up size more than the sample picked  and then kept back and pick up female and so on.
-#prob for ratio distribution males is 70%
+set.seed(1234)
+(gender = sample(c('M','F'), size=n, replace=T, prob=c(.7,.3)))
+table(gender)
 (t1=table(gender))
-prop.table(t1) #calculate proportion
-n1=30
-college=sample(c('srcc','fms','iim'), size=n1, replace=T , prob = c(.4, .3, .3))
-college
+prop.table(t1)
+
+set.seed(12)
+(college = sample(c('SRCC','FMS','IIM'), size=n, replace=T, prob=c(.4,.3,.3)))
+(t2=table(college))
+prop.table(t2)
+n=30
+(rollno = paste('F',1:30,sep='-'))
+(sname = paste('Student',1:30, sep='&'))
+set.seed(1234)
+(gender = sample(c('M','F'), size=n, replace=T, prob=c(.7,.3)))
+(t1=table(gender))
+prop.table(t1)
+set.seed(12)
+(college = sample(c('SRCC','FMS','IIM'), size=n, replace=T, prob=c(.4,.3,.3)))
 (t2=table(college))
 prop.table(t2)
 
-
-
-
-(marks1= round(rnorm(n=n,mean=60,sd=10),0))
-(marks2= round(rnorm(n=n,mean=55,sd=15),0))
-rollno;sname;gender;college;marks1;marks2;
+(marks1 = round(rnorm(n=n, mean=60,sd=10),0) )
+(marks2 = round(rnorm(n=n, mean=55,sd=15),0) )
+rollno; sname; gender; college;marks1;marks2
 length(gender)
+students = data.frame(rollno, sname, gender, college, marks1, marks2)
+class(students)
+students
+head(students)
+students$
+  students$rollno
+students[,5:6]
+students[,c(2,5:6)]
+students[,c('sname','marks1','marks2')]
+str(students)
+summary(students)
+quantile(students$marks1)
+quantile(students$marks1, probs=seq(0,1,.1))
+seq(0,1,.1)
 
-(students=data.frame(rollno,sname,gender,college,marks1,marks2))
-students[,c('sname','marks1')]
-str(students) #structure
-summary(students)
-quantile(students$marks1) #calculate quartile
-quantile(students$marks1, probs=seq(0,1,0.1)) #calculate decile
-seq(1,100,2) #interval of 2
+quantile(students$marks1)
+quantile(students$marks1, probs=c(0,.25,.5,.75,1))
 seq(1,100)
-quantile(students$marks1, probs=seq(0,1,0.01)) #percentile
-#seq=(from=1, to=100, by=3)
-#in quartile seq=(0,1,0,25,0.5,0.75,1)
+seq(1,100,2)
+seq(1,100,3)
+quantile(students$marks1, probs=seq(0,1,.1))
+quantile(students$marks1, probs=seq(0,1,.01))
+seq(from=1,to=100,by=3)
+quantile(students$marks1, probs=seq(0,1,.25))
+summary(students)
 str(students)
-students$rollno=as.character(students$rollno)
-students$sname=as.character(students$sname)
+students$rollno =as.character(students$rollno)
+students$sname =as.character(students$sname)
 str(students)
 summary(students)
+str(students)
 head(students)
-write.csv(students,'fms.csv',row.names = F)
-students2=read.csv('fms.csv')
-head(students)
-students3=read.csv(file.choose())
+write.csv(students, 'fms.csv', row.names = F)
+students2 = read.csv('fms.csv')
+head(students2)
+students3 = read.csv(file.choose())
 head(students3)
 
-
-students=read.csv('fms.csv')
-students
-
-
-
-
-
-#details of all students who got more than 60
-
-
+#students
+head(students)
 library(dplyr)
 head(students)
-students[students$marks1 >60, ]
-students[students$gender =='F', ]
-students[students$gender =='F'| students$college == 'SRCC', ]
-#highest from all colleges
-students %>% filter(gender=='M' )
-students %>% group_by(gender) %>% summarise(mean(marks1),mean(marks2))
-students %>% group_by(college)%>% summarise(max(marks1),max(marks2))
-students %>% filter(college=='fms') %>% select(marks1,marks2)
+students[students$marks1 > 60 , ]
+students[students$gender =='F' , ]
+students[students$gender =='F' | students$college == 'SRCC' , ]
+#highest from all college
+students %>% filter(gender=='M' & marks1 > 60)
+#all students with gender M marks1>60
 
+students %>% group_by(gender) %>% summarise(mean(marks1), mean(marks2))
+students %>% group_by(gender,college) %>% summarise(countTotal=n())
+students %>% tally()
+students %>% group_by(gender,college) %>% summarise(countTotal=n(),mean(marks1),max(marks2)) 
+students %>% mutate(totalmarks = marks1 + 1.2 * marks2) %>% arrange(-totalmarks) %>% head(n=2)
+students %>% slice(1:5)
+students %>% slice(seq(1,30,2)) #every alternate row
+students%>% sample_n(5) #random 5 rows
+students %>% sample_frac(.2) #random 20%
+students %>% mutate(totalmarks = marks1 +1.2 *marks2) %>% filter(totalmarks==max(totalmarks))
+students %>% group_by(college) %>% summarise(max(marks1), max(marks2))
+students %>% filter(college=='FMS') %>% select(marks1, marks2)
 
-
+students
